@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="resize-drag">
+    <div class="card">
+      <div class="card__heading">
+        <div class="heading__left">
+          <div class="card__origin">v</div>
+          <div class="card__urgency">s</div>
+          <div class="title-dob__wrapper">
+            <div class="card__title">Rick, Kol</div>
+            <div class="card__dob">M, 20-Mar-2003, 18Y</div>
+          </div>
+        </div>
+        <div class="heading__right">
+          <div class="icon icon__full">
+            <img src="assets/icons/fullscreen.svg" alt="icon">
+          </div>
+          <div class="icon icon__collapse">
+            <img src="assets/icons/collapse.svg" alt="icon">
+          </div>
+          <div class="icon icon__close">
+            <img src="assets/icons/close.svg" alt="icon">
+          </div>
+        </div>
+      </div>
+      <div class="card__content">
+        <div class="card__left">
+          <div class="section section__patient">
+            <div class="section__heading">
+              <div class="heading__text">Patient Information</div>
+              <div class="heading__label">Existing Patient</div>
+            </div>
+            <div class="column-wrapper">
+              <div class="section__column">
+                  <div class="section__item">
+                    <div class="item__title">Health Card:</div>
+                    <div class="item__content">OHIP 2142134233 LK</div>
+                  </div>
+                  <div id="mrn" class="section__item item-hidden">
+                    <div class="item__title">MRN:</div>
+                    <div class="item__content">1234567</div>
+                  </div>
+              </div>
+              <div class="section__column">
+                <div class="section__item">
+                  <div class="item__title item__title-short">Phone:</div>
+                  <div class="item__content">(613) 794 9568</div>
+                </div>
+               
+                <div id="patemail" class="section__item item-hidden">
+                  <div class="item__title item__title-short">Email:</div>
+                  <div class="item__content">patient@gmail.com</div>
+                </div>
+              </div>
+            </div>
+            <div id="patadres" class="section__bottom item-hidden">
+              <div class="item__title item__title-short">Address:</div>
+              <div class="item__content">123 Street, Ontario, ON, 12345678</div>
+            </div>
+          </div>
+          <div class="section section__service">
+            <div class="section__heading">
+              <div class="heading__text">Service Information</div>
+            </div>
+            <div class="section__bottom">
+              <div class="item__title item__title-short">Service:</div>
+              <div class="item__content services">
+                <div class="service">
+                  <div class="service__modal">OT</div>
+                  <div class="service__name">Tissue Back</div>
+                </div>
+                <div class="service">
+                  <div class="service__modal">MG</div>
+                  <div class="service__name">Consultation</div>
+                </div>
+              </div>
+            </div>
+            <div class="column-wrapper">
+              <div class="section__column">
+                  <div id="inbdate" class="section__item item-hidden">
+                    <div class="item__title">Inbound Date:</div>
+                    <div class="item__content">09-May-2022</div>
+                  </div>
+                  <div id="clinicname" class="section__item item-hidden">
+                    <div class="item__title ">Clinic Name:</div>
+                    <div class="item__content">Port Perry Clinic</div>
+                  </div>
+              </div>
+              <div id="duedate" class="section__column item-hidden">
+                <div class="section__item ">
+                  <div class="item__title item__title-short">Due Date:</div>
+                  <div class="item__content">10-May-2022</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section section__notes">
+              <div class="section__bottom note">
+                <div class="item__title item__title-note">
+                  <div class="note__icon">
+                    <img src="assets/icons/notes.svg" alt="icon">
+                  </div>
+                  <div class="note__title">
+                    Notes:
+                  </div>
+                </div>
+                <div class="item__content item__content-note">
+                  Expected Date: 03-Jun-2021 Reason for Exam: -> pain, r.0 heel spur.ck.
+                </div>
+              </div>
+          </div>
+          <div id="refsmall" class="section section__referrer">
+            <div class="section__heading">
+              <div class="heading__text">Referrer Information</div>
+              <div class="heading__label">Existing Referrer</div>
+            </div>
+            <div class="section__bottom">
+              <div class="item__title item__title-short">Referrer:</div>
+              <div class="item__content">
+                Dr. Test, Doctor&nbsp;&nbsp;
+                <span style="color: #898989;">Tel:</span>
+                <span>(705) 141 4124, (705) 244 1233</span>
+              </div>
+            </div>
+          </div>
+          <div id="reffull" class="item-hidden section section__referrer-full">
+            <div class="section__heading">
+              <div class="heading__text">Referrer Information</div>
+              <div class="heading__label">Existing Referrer</div>
+            </div>
+            <div class="column-wrapper">
+              <div class="section__column">
+                  <div class="section__item">
+                    <div class="item__title">First Name:</div>
+                    <div class="item__content">Doctor</div>
+                  </div>
+                  <div class="section__item">
+                    <div class="item__title">Phone:</div>
+                    <div class="item__content">(613) 794 9574</div>
+                  </div>
+                  <div id="refclinic" class="section__item item-hidden">
+                    <div class="item__title">Clinic Name:</div>
+                    <div class="item__content">Port Perry Clinic</div>
+                  </div>
+              </div>
+              <div class="section__column">
+                <div class="section__item">
+                  <div class="item__title item__title-short">LastName:</div>
+                  <div class="item__content">Test</div>
+                </div>
+                <div class="section__item ">
+                  <div class="item__title item__title-short">Fax:</div>
+                  <div class="item__content">(777) 777 7777</div>
+                </div>
+                <div id="billing" class="section__item item-hidden">
+                  <div class="item__title item__title-short">Billing#:</div>
+                  <div class="item__content">952369</div>
+                </div>
+              </div>
+            </div>
+            <div class="section__bottom item-hidden">
+              <div class="item__title item__title-short">Address:</div>
+              <div class="item__content">123 Street, Ontario, ON, 12345678</div>
+            </div>
+          </div>
+        </div>
+        <div class="card__right item-hidden">
+          <div class="section section__attachments">
+            <div class="section__heading">
+              <div class="heading__text">Attachments</div>
+            </div>
+            <div class="section__bottom">
+              <img src="assets/images/Img viewer.png" alt="">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.13/dist/interact.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
