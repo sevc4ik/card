@@ -13,15 +13,14 @@
 <body>
 <div class="container">
   <div class="resize-drag">
+    <div class="card__drag drag">
+      <img src="assets/icons/drag.svg" alt="drag">
+    </div>
     <div class="card">
       <div class="card__heading">
         <div class="heading__left">
           <div class="card__origin">v</div>
           <div class="card__urgency">s</div>
-          <div class="title-dob__wrapper">
-            <div class="card__title">Rick, Kol</div>
-            <div class="card__dob">M, 20-Mar-2003, 18Y</div>
-          </div>
         </div>
         <div class="heading__right">
           <div class="icon icon__full">
@@ -37,9 +36,12 @@
       </div>
       <div class="card__content">
         <div class="card__left">
-          <div class="section section__patient">
-            <div class="section__heading">
-              <div class="heading__text">Patient Information</div>
+          <div class="section">
+            <div class="section__patient">
+              <div class="title-dob__wrapper">
+                <div class="card__title">Rick, Kol</div>
+                <div class="card__dob">M, 20-Mar-2003, 18Y</div>
+              </div>
               <div class="heading__label">Existing Patient</div>
             </div>
             <div class="column-wrapper">
@@ -58,23 +60,23 @@
                   <div class="item__title item__title-short">Phone:</div>
                   <div class="item__content">(613) 794 9568</div>
                 </div>
-               
+                
                 <div id="patemail" class="section__item item-hidden">
                   <div class="item__title item__title-short">Email:</div>
                   <div class="item__content">patient@gmail.com</div>
                 </div>
               </div>
             </div>
-            <div id="patadres" class="section__bottom item-hidden">
+            <div id="patadres" class="section__item item-hidden">
               <div class="item__title item__title-short">Address:</div>
               <div class="item__content">123 Street, Ontario, ON, 12345678</div>
             </div>
           </div>
           <div class="section section__service">
-            <div class="section__heading">
+            <div class="section__heading item-hidden">
               <div class="heading__text">Service Information</div>
             </div>
-            <div class="section__bottom">
+            <div class="section__item">
               <div class="item__title item__title-short">Service:</div>
               <div class="item__content services">
                 <div class="service">
@@ -89,16 +91,16 @@
             </div>
             <div class="column-wrapper">
               <div class="section__column">
-                  <div id="inbdate" class="section__item item-hidden">
+                <div id="inbdate" class="section__item ">
+                  <div class="item__title ">Clinic Name:</div>
+                  <div class="item__content">Port Perry Clinic</div>
+                </div>
+                  <div id="clinicname" class="item-hidden section__item">
                     <div class="item__title">Inbound Date:</div>
                     <div class="item__content">09-May-2022</div>
                   </div>
-                  <div id="clinicname" class="section__item item-hidden">
-                    <div class="item__title ">Clinic Name:</div>
-                    <div class="item__content">Port Perry Clinic</div>
-                  </div>
               </div>
-              <div id="duedate" class="section__column item-hidden">
+              <div id="duedate" class="section__column">
                 <div class="section__item ">
                   <div class="item__title item__title-short">Due Date:</div>
                   <div class="item__content">10-May-2022</div>
@@ -107,7 +109,7 @@
             </div>
           </div>
           <div class="section section__notes">
-              <div class="section__bottom note">
+              <div class="section__item note">
                 <div class="item__title item__title-note">
                   <div class="note__icon">
                     <img src="assets/icons/notes.svg" alt="icon">
@@ -122,30 +124,24 @@
               </div>
           </div>
           <div id="refsmall" class="section section__referrer">
-            <div class="section__heading">
-              <div class="heading__text">Referrer Information</div>
-              <div class="heading__label">Existing Referrer</div>
-            </div>
-            <div class="section__bottom">
-              <div class="item__title item__title-short">Referrer:</div>
+            <div class="section__item section__item-referrer">
               <div class="item__content">
                 Dr. Test, Doctor&nbsp;&nbsp;
                 <span style="color: #898989;">Tel:</span>
                 <span>(705) 141 4124, (705) 244 1233</span>
               </div>
+              <div class="heading__label">Existing Referrer</div>
             </div>
           </div>
           <div id="reffull" class="item-hidden section section__referrer-full">
-            <div class="section__heading">
-              <div class="heading__text">Referrer Information</div>
+            <div class="section__item section__item-referrer">
+              <div class="item__content">
+                Dr. Test, Doctor&nbsp;&nbsp;
+              </div>
               <div class="heading__label">Existing Referrer</div>
             </div>
             <div class="column-wrapper">
               <div class="section__column">
-                  <div class="section__item">
-                    <div class="item__title">First Name:</div>
-                    <div class="item__content">Doctor</div>
-                  </div>
                   <div class="section__item">
                     <div class="item__title">Phone:</div>
                     <div class="item__content">(613) 794 9574</div>
@@ -156,10 +152,6 @@
                   </div>
               </div>
               <div class="section__column">
-                <div class="section__item">
-                  <div class="item__title item__title-short">LastName:</div>
-                  <div class="item__content">Test</div>
-                </div>
                 <div class="section__item ">
                   <div class="item__title item__title-short">Fax:</div>
                   <div class="item__content">(777) 777 7777</div>
@@ -170,7 +162,7 @@
                 </div>
               </div>
             </div>
-            <div class="section__bottom item-hidden">
+            <div class="section__item item-hidden">
               <div class="item__title item__title-short">Address:</div>
               <div class="item__content">123 Street, Ontario, ON, 12345678</div>
             </div>
@@ -181,12 +173,13 @@
             <div class="section__heading">
               <div class="heading__text">Attachments</div>
             </div>
-            <div class="section__bottom">
+            <div class="section__item">
               <img src="assets/images/Img viewer.png" alt="">
             </div>
         </div>
+      </div>
+      </div>
     </div>
-  </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.13/dist/interact.min.js"></script>
 <script src="script.js"></script>

@@ -9,11 +9,12 @@ const refsmall = document.getElementById('refsmall');
 const reffull = document.getElementById('reffull');
 const refclinic = document.getElementById('refclinic');
 const billing = document.getElementById('billing');
+const wrapper = document.querySelector('.resize-drag');
 
 interact('.resize-drag')
   .resizable({
     // resize from all edges and corners
-    edges: { left: true, right: true, bottom: true, top: true },
+    edges: { left: false, right: true, bottom: true, top: true },
 
     listeners: {
       move (event) {
@@ -46,12 +47,14 @@ interact('.resize-drag')
 
       // minimum size
       interact.modifiers.restrictSize({
-        min: { width: 482, height: 253 }
+        min: { width: 498, height: 203 }
       })
     ],
 
     inertia: true
   })
+
+interact('.drag')
   .draggable({
     // enable inertial throwing
     inertia: true,
@@ -83,7 +86,7 @@ interact('.resize-drag')
   })
 
   function dragMoveListener (event) {
-    var target = event.target
+    var target = wrapper
     // keep the dragged position in the data-x/data-y attributes
     var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
     var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
@@ -105,15 +108,15 @@ interact('.resize-drag')
       if(height > 305 && width < 1120) {
         mrn.classList.remove('item-hidden');
         patemail.classList.remove('item-hidden');
-        duedate.classList.remove('item-hidden');
-        inbdate.classList.remove('item-hidden');
+        // duedate.classList.remove('item-hidden');
+        // inbdate.classList.remove('item-hidden');
         refsmall.classList.add('item-hidden');
         reffull.classList.remove('item-hidden');
       } else {
         mrn.classList.add('item-hidden');
         patemail.classList.add('item-hidden');
-        duedate.classList.add('item-hidden');
-        inbdate.classList.add('item-hidden');
+        // duedate.classList.add('item-hidden');
+        // inbdate.classList.add('item-hidden');
         refsmall.classList.remove('item-hidden');
         reffull.classList.add('item-hidden');
       }
@@ -133,8 +136,8 @@ interact('.resize-drag')
       attach.classList.remove('item-hidden')
       mrn.classList.remove('item-hidden');
       patemail.classList.remove('item-hidden');
-      duedate.classList.remove('item-hidden');
-      inbdate.classList.remove('item-hidden');
+      // duedate.classList.remove('item-hidden');
+      // inbdate.classList.remove('item-hidden');
       patadres.classList.remove('item-hidden');
       clinicname.classList.remove('item-hidden');
       refclinic.classList.remove('item-hidden');
