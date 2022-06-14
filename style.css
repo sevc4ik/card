@@ -1,8 +1,17 @@
-.container {
+body {
   color: var(--primary);
   width: 100%;
-  height: 900px;
   font-family: 'Roboto', sans-serif;
+}
+
+.bg {
+  width: 1365px;
+  height: 765px;
+  position: relative;
+}
+
+.bg-services {
+  background-image: url('assets/bg/services.jpg');
 }
 
 :root {
@@ -10,55 +19,36 @@
   --border: #9A9A9A;
 }
 
-.resize-drag-wrapper {
-  display: flex;
-  border: 1px solid var(--border);
-  width: fit-content;
-}
-
 .resize-drag {
     width: fit-content;
-    border-radius: 8px;
-    padding: 10px 10px 10px 5px;
-    margin: 1rem;
-    border: 1px solid var(--border);
+    height: 240px;
     touch-action: none;
-    overflow-y: auto;
-    /* This makes things *much* easier */
     box-sizing: border-box;
     display: flex;
-    position: relative;
+    position: sticky;
     gap: 10px;
-  }
+    bottom: 0px;
+}
 
 .card {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  overflow: auto;
   gap: 5px;
   cursor: default;
-  margin-left: 35px;
   width: 100%;
 }
 
-.card-border {
-  border-right: 1px solid var(--border);
-  position: absolute;
-  height: 100%;
-  width: 1px;
-  left: 30px;
-  top: 0;
-}
-
 .card__drag {
-  width: 30px;
+  min-width: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   height: 100%;
   border-right: 1px solid var(--border);
-  top: 0;
-  left: 0;
+  border-radius: 7px 0 0 7px;
+  cursor: move;
 }
 
 .card__drag:hover {
@@ -208,14 +198,12 @@
 }
 
 .item__title {
-  min-width: 90px;
   font-size: 12px;
   font-weight: 700;
   line-height: 20px;
 }
 
 .item__title-short {
-  min-width: 65px;
 }
 
 .item__content {
@@ -254,6 +242,23 @@
   text-align: center;
 }
 
+/* Attach */
+
+.attach {
+  display: flex;
+  gap: 2px;
+}
+
+.attach__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.attach__title {
+  color: #21A567;
+  cursor: pointer;
+}
+
 /*Note*/
 .item__title-note {
   display: flex;
@@ -274,4 +279,62 @@
   border: 1px solid #DFDFDF;
   padding: 2px;
   align-items: center;
+}
+
+.resize-drag .resizers{
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: flex;
+}
+
+.resizer__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.resizer__icon:hover {
+  filter: brightness(0) invert(100%);
+}
+
+.resize-drag .resizers .resizer{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; /*magic to turn square into circle*/
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border);
+  background-color: #fff;
+  position: absolute;
+  transition: width 0.3s, height 0.3s;
+}
+
+.resize-drag .resizers .resizer.top-left {
+  left: -10px;
+  top: -10px;
+  cursor: nwse-resize; /*resizer cursor*/
+}
+
+.resize-drag .resizers .resizer.top-right {
+  right: -12px;
+  top: -12px;
+  cursor: nesw-resize;
+}
+.resize-drag .resizers .resizer:hover {
+  background-color: #21A567;
+}
+.resize-drag .resizers .resizer.bottom-left {
+  left: -10px;
+  bottom: -10px;
+  cursor: nesw-resize;
+}
+.resize-drag .resizers .resizer.bottom-right {
+  right: -5px;
+  bottom: -5px;
+  cursor: nwse-resize;
 }
